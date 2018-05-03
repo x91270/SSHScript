@@ -13,7 +13,7 @@ NAME_BIN="rclone"
 # Description:       Enable rclone by daemon.
 ### END INIT INFO
 
-NAME="oneDrive" #rclone name名
+NAME="OneDrive" #rclone name名
 REMOTE='Download' #远程文件夹
 LOCAL='/home/OneDrive' #挂载地址
 
