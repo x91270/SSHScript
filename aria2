@@ -23,7 +23,7 @@ Error="${Red_font_prefix}[错误]${Font_color_suffix}"
 RETVAL=0
 
 check_running(){
-	PID=`ps -ef |grep "${NAME_BIN}" |grep -v "grep" | grep -v "aria2.sh"| grep -v "init.d" |grep -v "service" |awk '{print $2}'`
+	PID=`ps -ef |grep "${NAME_BIN}"|awk '{print $2}'`
 	if [[ ! -z ${PID} ]]; then
 		return 0
 	else
@@ -31,7 +31,6 @@ check_running(){
 	fi
 }
 Read_config(){
-	[[ ! -z "${Download_dir}" ]] && Download_dir=$(echo "${Download_dir}"|awk -F '=' '{print $2}')
 	RPC_listen_port=$(cat ${CONFIG}|grep -v '#'|grep "rpc-listen-port=")
 	[[ ! -z "${RPC_listen_port}" ]] && RPC_listen_port=$(echo "${RPC_listen_port}"|awk -F '=' '{print $2}')
 	RPC_secret=$(cat ${CONFIG}|grep -v '#'|grep "rpc-secret=")
