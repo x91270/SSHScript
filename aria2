@@ -14,8 +14,8 @@ export PATH
 
 NAME="Aria2"
 NAME_BIN="aria2c"
-CONFIG="/content/.aria2/aria2.conf"
-LOG="/content/.aria2/aria2.log"
+CONFIG="/content/aria2.conf"
+LOG="/content/aria2.log"
 
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
 Info="${Green_font_prefix}[信息]${Font_color_suffix}"
@@ -23,7 +23,7 @@ Error="${Red_font_prefix}[错误]${Font_color_suffix}"
 RETVAL=0
 
 check_running(){
-	PID=`ps -ef |grep "${NAME_BIN}"|awk '{print $2}'`
+	PID=`ps -ef |grep "${NAME_BIN}" |grep -v "grep" | grep -v "aria2.sh"| grep -v "init.d" |grep -v "service" |awk '{print $2}'`
 	if [[ ! -z ${PID} ]]; then
 		return 0
 	else
