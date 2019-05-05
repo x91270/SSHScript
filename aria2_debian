@@ -60,7 +60,7 @@ View_Config(){
 do_start(){
 	check_running
 	if [[ $? -eq 0 ]]; then
-		echo -e "${Info} $NAME (PID ${PID}) 正在运行..." && exit 0
+		echo -e "${Info} $NAME 正在运行..." && exit 0
 	else
 		echo -e "${Info} $NAME 启动中..."
 		ulimit -n 51200
@@ -94,7 +94,7 @@ do_status(){
 	check_running
 	if [[ $? -eq 0 ]]; then
 		View_Config
-		echo -e "${Info} $NAME (PID $(echo ${PID})) 正在运行..."
+		echo -e "${Info} $NAME 正在运行..."
 	else
 		echo -e "${Info} $NAME 未运行 !"
 		RETVAL=1
