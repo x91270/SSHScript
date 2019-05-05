@@ -31,6 +31,7 @@ check_running(){
 	fi
 }
 Read_config(){
+	[[ ! -e ${CONFIG} ]] && echo -e "${Error} ${NAME} 配置文件不存在 !" && exit 1
 	RPC_listen_port=$(cat ${CONFIG}|grep -v '#'|grep "rpc-listen-port=")
 	[[ ! -z "${RPC_listen_port}" ]] && RPC_listen_port=$(echo "${RPC_listen_port}"|awk -F '=' '{print $2}')
 	RPC_secret=$(cat ${CONFIG}|grep -v '#'|grep "rpc-secret=")
