@@ -4,8 +4,8 @@ log_format: json
 log: /var/log/ngrok.log
 tunnels:
   SSH:
-    addr: 80
+    addr: 22
     proto: tcp
-  app-bar:
-    addr: 80
-    proto: tcp
+  ARIA2:
+    addr: 6800
+    proto: http
