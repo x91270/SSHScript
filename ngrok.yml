@@ -1,0 +1,11 @@
+authtoken: 2bW5wC5P9xWSxrGw85sk1_69m6ZNUwK8pvtvnPQXTsH
+log_level: info
+log_format: json
+log: /var/log/ngrok.log
+tunnels:
+  SSH:
+    addr: 80
+    proto: tcp
+  app-bar:
+    addr: 80
+    proto: tcp
