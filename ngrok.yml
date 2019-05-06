@@ -8,4 +8,4 @@ tunnels:
     proto: tcp
   ARIA2:
     addr: 6800
-    proto: http
+    proto: tcp
