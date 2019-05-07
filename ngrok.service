@@ -1,9 +1,0 @@
-[Unit]
-Description=ngrok
-After=network.target
-
-[Service]
-ExecStart=/content/ngrok tcp 22
-
-[Install]
-WantedBy=multi-user.target
