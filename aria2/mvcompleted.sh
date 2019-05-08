@@ -8,7 +8,7 @@ SRC=$3
 echo `date` "INFO  Download end  { param1 : $1 , param2 : $2 ,  param3 : $3  } " >> "$LOG"
 
 if [ "$2" == "0" ]; then
-  echo `date` "INFO  no file to move for" "$1". >> "$LOG"
+  echo `date` "INFO  no file to move for $1". >> "$LOG"
   exit 0
 fi
  
