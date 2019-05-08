@@ -5,6 +5,8 @@ COMPLETE=/content/GDrive/My Drive/Download #Google Drive 网盘映射!
 LOG=/content/mvcompleted.log
 SRC=$3
 
+echo `date` "INFO  Download end . SRC " "$SRC". >> "$LOG"
+
 if [ "$2" == "0" ]; then
   echo `date` "INFO  no file to move for" "$1". >> "$LOG"
   exit 0
