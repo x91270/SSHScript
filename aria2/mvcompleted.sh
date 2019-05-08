@@ -1,11 +1,11 @@
 #!/bin/sh
  
 DOWNLOAD=/content/Download  #Aria2  下载目录!
-COMPLETE=/content/GDrive/My Drive/Download #Google Drive 网盘映射!
+COMPLETE=/content/GDrive/My\ Drive/Download #Google Drive 网盘映射!
 LOG=/content/mvcompleted.log
 SRC=$3
 
-echo `date` "INFO  Download end . SRC " "$SRC". >> "$LOG"
+echo `date` "INFO  Download end  { param1 : $1 , param2 : $2 ,  param3 : $3  } " >> "$LOG"
 
 if [ "$2" == "0" ]; then
   echo `date` "INFO  no file to move for" "$1". >> "$LOG"
